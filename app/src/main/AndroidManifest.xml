@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Samachar"
         tools:targetApi="31">
         <activity
+            android:name=".Websitenews"
+            android:exported="false" />
+        <activity
             android:name=".HomeScreen"
             android:exported="false" />
         <activity

@@ -5,48 +5,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeScreen">
-  <androidx.appcompat.widget.Toolbar
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/toolbar">
-          <TextView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="SAMACHAR"
-              android:textAlignment="center"
-              android:gravity="center"
-              android:padding="5dp"
-              android:textColor="@color/black"
-              android:textStyle="bold"
-              android:layout_margin="5dp"
-              android:textSize="20dp"/>
 
-  </androidx.appcompat.widget.Toolbar>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/App_name">
 
-    <androidx.recyclerview.widget.RecyclerView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:layout_below="@+id/toolbar"
-        android:orientation="horizontal"
-        tools:listitem="@layout/categoyies"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:tabIndicatorHeight="3.5dp"
+        app:tabMode="scrollable">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/News"
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For You">
+
+        </com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/science_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Science">
+
+        </com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/technology_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Technology">
+
+        </com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/health_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health">
+
+        </com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/sports_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sports">
+
+        </com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/entertainment_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entertainment">
+
+        </com.google.android.material.tabs.TabItem>
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/category"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/newsitemstyle"/>
+        android:layout_marginTop="0dp">
 
-        <ProgressBar
-            android:id="@+id/Progress_Bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:visibility="gone"/>
-
+    </androidx.viewpager.widget.ViewPager>
 </RelativeLayout>
